@@ -26,5 +26,12 @@ namespace ListOverCollections
             foreach(var car in fastCars)
                 Console.WriteLine($"{car.PetName} is going too fast!");
         }
+        static void GetFastBMWs(List<Car> myCars)
+        {
+            // Найти быстрые BMW :)
+            var fastCars = from c in myCars where c.Speed > 55 && c.Make=="BMW" select c;
+            foreach (var car in fastCars)
+                Console.WriteLine($"{car.PetName} is going too fast!");
+        }
     }
 }
