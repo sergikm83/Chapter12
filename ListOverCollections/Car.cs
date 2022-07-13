@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListOverCollections
 {
-    class Саг
+    public class Car
     {
         public string PetName { get; set; } = "";
         public string Color { get; set; } = "";

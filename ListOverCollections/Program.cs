@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ListOverCollections
 {
@@ -6,7 +8,8 @@ namespace ListOverCollections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("***** LINQ over Generic Collections *****\n");
+            // Создать список List<> объектов Car.
         }
     }
 }
