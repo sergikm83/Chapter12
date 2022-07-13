@@ -8,7 +8,8 @@ namespace LinqOverArray
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("***** Fun with LINQ to Objects *****\n");
+            QueryOverStrings();
         }
         static void QueryOverStrings()
         {
