@@ -24,7 +24,7 @@ namespace ListOverCollections
             // Найти в List<> все объекты Car, у которых значение Speed больше 55.
             var fastCars = from c in myCars where c.Speed > 55 select c;
             foreach(var car in fastCars)
-                Console.WriteLine($"{car} is going too fast!");
+                Console.WriteLine($"{car.PetName} is going too fast!");
         }
     }
 }
