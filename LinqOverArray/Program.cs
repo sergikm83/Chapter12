@@ -12,6 +12,8 @@ namespace LinqOverArray
             QueryOverStrings();
             Console.WriteLine();
             QueryOverStnngsWithExtensionMethods();
+            Console.WriteLine();
+            QueryOverInts();
         }
         static void QueryOverStrings()
         {
