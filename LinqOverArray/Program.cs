@@ -10,6 +10,8 @@ namespace LinqOverArray
         {
             Console.WriteLine("***** Fun with LINQ to Objects *****\n");
             QueryOverStrings();
+            Console.WriteLine();
+            QueryOverStnngsWithExtensionMethods();
         }
         static void QueryOverStrings()
         {
@@ -18,6 +20,7 @@ namespace LinqOverArray
                                          where g.Contains(" ")
                                          orderby g
                                          select g;
+            ReflectOverQueryResults(subset);
             foreach (string s in subset)
                 Console.WriteLine("Item: {0}", s);
         }
@@ -25,6 +28,7 @@ namespace LinqOverArray
         {
             string[] currentVideoGames = { "Morrowind", "Uncharted 2", "Fallout 3", "Daxter", "System Shock 2" };
             IEnumerable<string> subset = currentVideoGames.Where(g => g.Contains(" ")).OrderBy(g => g).Select(g => g);
+            ReflectOverQueryResults(subset,"Extension Method");
             foreach (string s in subset)
                 Console.WriteLine("Item: {0}", s);
         }
