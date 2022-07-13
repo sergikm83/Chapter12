@@ -28,5 +28,14 @@ namespace LinqOverArray
             foreach (string s in subset)
                 Console.WriteLine("Item: {0}", s);
         }
+        static void ReflectOverQueryResults(object resultSet, string queryType = "Query Expressions")
+        {
+            Console.WriteLine($"***** Info about your query using {queryType} *****");
+            // Вывести тип результирующего набора
+            Console.WriteLine("resultSet is of type: {0}",resultSet.GetType().Name);
+            // Вывести местоположение результирующего набора
+            Console.WriteLine("resultSet location: {0}",
+                resultSet.GetType().Assembly.GetName().Name);
+        }
     }
 }
