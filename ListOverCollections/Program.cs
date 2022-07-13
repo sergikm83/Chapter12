@@ -19,5 +19,12 @@ namespace ListOverCollections
                 new Car { PetName = "Melvin", Color = "White", Speed = 43, Make = "Ford" }
             };
         }
+        static void GetFastCars(List<Car> myCars)
+        {
+            // Найти в List<> все объекты Car, у которых значение Speed больше 55.
+            var fastCars = from c in myCars where c.Speed > 55 select c;
+            foreach(var car in fastCars)
+                Console.WriteLine($"{car} is going too fast!");
+        }
     }
 }
