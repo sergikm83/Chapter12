@@ -21,6 +21,12 @@ namespace LinqOverArray
             foreach (string s in subset)
                 Console.WriteLine("Item: {0}", s);
         }
-
+        static void QueryOverStnngsWithExtensionMethods()
+        {
+            string[] currentVideoGames = { "Morrowind", "Uncharted 2", "Fallout 3", "Daxter", "System Shock 2" };
+            IEnumerable<string> subset = currentVideoGames.Where(g => g.Contains(" ")).OrderBy(g => g).Select(g => g);
+            foreach (string s in subset)
+                Console.WriteLine("Item: {0}", s);
+        }
     }
 }
