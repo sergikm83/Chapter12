@@ -41,5 +41,20 @@ namespace LinqOverArray
             Console.WriteLine("resultSet location: {0}",
                 resultSet.GetType().Assembly.GetName().Name);
         }
+        static void QueryOverInts()
+        {
+            int[] numbers = { 10, 20, 30, 2, 5, 8, 18, 22, 37, 64 };
+            var subset = from i in numbers where i < 10 select i;
+            // Оператор LINQ оценивается тут
+            foreach (var item in subset)
+                Console.WriteLine($"{item} < 10");
+            Console.WriteLine();
+            numbers[0] = 7;
+            // Снова производится оценка
+            foreach (var item in subset)
+                Console.WriteLine($"{item} < 10");
+            Console.WriteLine();
+            ReflectOverQueryResults(subset);
+        }
     }
 }
