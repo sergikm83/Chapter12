@@ -8,7 +8,10 @@ namespace LinqRetValues
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("***** LINQ Return Values *****\n");
+            IEnumerable<string> subset = GetStringSubset();
+            foreach(var item in subset)
+                Console.WriteLine(item);
         }
         static IEnumerable<string> GetStringSubset()
         {
