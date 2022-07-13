@@ -58,5 +58,15 @@ namespace LinqOverArray
             Console.WriteLine();
             ReflectOverQueryResults(subset);
         }
+        static void ImmediateExecution()
+        {
+            int[] numbers = { 10, 20, 30, 40, 1, 2, 3, 8 };
+            // Получить данные НЕМЕДЛЕННО как int[].
+            int[] subsetAsIntArray =
+            (from i in numbers where i < 10 select i).ToArray();
+            // Получить данные НЕМЕДЛЕННО как List<int>.
+            List<int> subsetAsListOfInts =
+            (from i in numbers where i < 10 select i).ToList();
+        }
     }
 }
