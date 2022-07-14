@@ -49,7 +49,9 @@ namespace FunWithLinqExpressions
                 }
             };
             // Здесь будем вызывать разнообразные методы!!!
-
+            Array objs = GetProjectedSubset(itemsInStock);
+            foreach(object o in objs)
+                Console.WriteLine(o);
         }
 
         static void SelectEverything(ProductInfo[] products)
