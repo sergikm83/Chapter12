@@ -100,5 +100,12 @@ namespace FunWithLinqExpressions
             int numb = (from g in currentVideoGames where g.Length > 6 select g).Count();
             Console.WriteLine("{0} items honor the LINQ query.", numb);
         }
+        static void ReverseEverything(ProductInfo[] products)
+        {
+            Console.WriteLine("Product in reverse:");
+            var allProducts = from p in products select p;
+            foreach(var prod in allProducts.Reverse())
+                Console.WriteLine(prod.ToString());
+        }
     }
 }
