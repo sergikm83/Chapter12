@@ -52,6 +52,13 @@ namespace FunWithLinqExpressions
             Array objs = GetProjectedSubset(itemsInStock);
             foreach (object o in objs)
                 Console.WriteLine(o);
+            // Проверка работы AlphabetizeProductNames()
+            // с выводом itemsInStock до сортировки и после
+            Console.WriteLine("\n\nItems in Stock before sorting by name:\n");
+            foreach(var s in itemsInStock)
+                Console.WriteLine(s.ToString());
+            Console.WriteLine("\nItems in Stock after sorted by name:\n");
+            AlphabetizeProductNames(itemsInStock);
         }
 
         static void SelectEverything(ProductInfo[] products)
