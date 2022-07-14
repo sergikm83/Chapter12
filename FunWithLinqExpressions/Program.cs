@@ -83,5 +83,10 @@ namespace FunWithLinqExpressions
             foreach (var item in nameDesc)
                 Console.WriteLine(item.ToString());
         }
+        static Array GetProjectedSubset(ProductInfo[] products)
+        {
+            var nameDesc = from p in products select new { p.Name, p.Description };
+            return nameDesc.ToArray();
+        }
     }
 }
