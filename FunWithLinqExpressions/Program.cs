@@ -50,7 +50,7 @@ namespace FunWithLinqExpressions
             };
             // Здесь будем вызывать разнообразные методы!!!
             Array objs = GetProjectedSubset(itemsInStock);
-            foreach(object o in objs)
+            foreach (object o in objs)
                 Console.WriteLine(o);
         }
 
@@ -74,7 +74,7 @@ namespace FunWithLinqExpressions
         {
             Console.WriteLine("The overstock items!");
             // Получить товары со складским запасом более 25 единиц.
-            var overstock = from p in products where p.NumberInStock>25 select p;
+            var overstock = from p in products where p.NumberInStock > 25 select p;
             foreach (var o in overstock)
                 Console.WriteLine(o.ToString());
         }
@@ -89,6 +89,16 @@ namespace FunWithLinqExpressions
         {
             var nameDesc = from p in products select new { p.Name, p.Description };
             return nameDesc.ToArray();
+        }
+        static void GetСountFromQuery()
+        {
+            string[] currentVideoGames =
+            {
+                "Morrowind", "Uncharted 2", "Fallout 3", "Daxter", "System Shock 2"
+            };
+            // Получить количетсво элементов, чья длина больше 6-ти символов.
+            int numb = (from g in currentVideoGames where g.Length > 6 select g).Count();
+            Console.WriteLine("{0} items honor the LINQ query.", numb);
         }
     }
 }
