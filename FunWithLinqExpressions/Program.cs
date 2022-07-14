@@ -76,5 +76,12 @@ namespace FunWithLinqExpressions
             foreach (var o in overstock)
                 Console.WriteLine(o.ToString());
         }
+        static void GetNamesAndDescriptions(ProductInfo[] products)
+        {
+            Console.WriteLine("Names and Descriptions:");
+            var nameDesc = from p in products select new { p.Name, p.Description };
+            foreach (var item in nameDesc)
+                Console.WriteLine(item.ToString());
+        }
     }
 }
