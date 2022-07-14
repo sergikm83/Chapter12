@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace FunWithLinqExpressions
 {
@@ -49,6 +50,15 @@ namespace FunWithLinqExpressions
             };
             // Здесь будем вызывать разнообразные методы!!!
 
+        }
+
+        static void SelectEverything(ProductInfo[] products)
+        {
+            // Получить все!
+            Console.WriteLine("All product details:");
+            var allProducts = from p in products select p;
+            foreach (var prod in allProducts)
+                Console.WriteLine(prod.ToString());
         }
     }
 }
