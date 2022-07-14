@@ -107,5 +107,13 @@ namespace FunWithLinqExpressions
             foreach(var prod in allProducts.Reverse())
                 Console.WriteLine(prod.ToString());
         }
+        static void AlphabetizeProductNames(ProductInfo[] products)
+        {
+            // Получить названия товаров в алфавитном порядке.
+            var subset = from p in products orderby p.Name select p;
+            Console.WriteLine("Ordered by Name:");
+            foreach(var p in subset)
+                Console.WriteLine(p.ToString());
+        }
     }
 }
