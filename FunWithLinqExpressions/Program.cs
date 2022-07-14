@@ -68,5 +68,13 @@ namespace FunWithLinqExpressions
             foreach (var n in names)
                 Console.WriteLine("Name: {0}", n);
         }
+        static void GetOverStock(ProductInfo[] products)
+        {
+            Console.WriteLine("The overstock items!");
+            // Получить товары со складским запасом более 25 единиц.
+            var overstock = from p in products where p.NumberInStock>25 select p;
+            foreach (var o in overstock)
+                Console.WriteLine(o.ToString());
+        }
     }
 }
