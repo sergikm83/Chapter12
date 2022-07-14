@@ -60,5 +60,13 @@ namespace FunWithLinqExpressions
             foreach (var prod in allProducts)
                 Console.WriteLine(prod.ToString());
         }
+        static void ListProductNames(ProductInfo[] products)
+        {
+            // Получить только наименования товаров
+            Console.WriteLine("Only product names:");
+            var names = from p in products select p.Name;
+            foreach (var n in names)
+                Console.WriteLine("Name: {0}", n);
+        }
     }
 }
