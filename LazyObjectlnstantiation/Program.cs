@@ -1,4 +1,5 @@
 ﻿using System;
+using LazyObjectlnstantiation.Classes;
 
 namespace LazyObjectlnstantiation
 {
