@@ -13,11 +13,11 @@ namespace LazyObjectlnstantiation.Classes
         public void Play() { }
         public void Pause() { }
         public void Stop() { }
-        private AllTracks allSongs = new AllTracks();
+        private Lazy<AllTracks> allSongs = new Lazy<AllTracks>();
         public AllTracks GetAllTracks()
         {
             // вернуть все композиции.
-            return allSongs;
+            return allSongs.Value;
         }
     }
 }
